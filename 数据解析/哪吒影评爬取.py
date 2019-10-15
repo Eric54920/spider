@@ -32,7 +32,7 @@ for i in range(10):
 	url = f'https://movie.douban.com/subject/26794435/reviews?start={i*20}'
 	response = requests.get(url=url, headers=headers).text
 	tree = etree.HTML(response)
-	div_list = tree.xpath('//div[@class="review-list  "]/div')
+	div_list = tree.xpath('//div[@class="review-list"]/div')
 	task = []
 	for div in div_list:
 		href = div.xpath('./div//h2/a/@href')[0]

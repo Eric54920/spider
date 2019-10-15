@@ -11,6 +11,7 @@ headers = {
     'features':'',
     'radius': '100000'
 }
+
 response = requests.get(url=url, headers=headers)
 json_data = json.loads(response.text)
 with open('starbucks.json', 'w', encoding='utf-8') as f:
