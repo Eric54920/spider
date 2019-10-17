@@ -31,11 +31,6 @@ for i in range(1, 20):
 		'applysn': '',
 	}
 
-	# getData(url, headers, data)
-	# response = requests.post(url=url, headers=headers, data=data).json()
-	# for dic in response['list']:
-	# 	ids_list.append(dic['ID'])
-
 	t = Thread(target=getData, args=(url, headers, data))
 	t.start()
 	task.append(t)
@@ -53,6 +48,6 @@ for i in ids_list:
 
 	data_list.append(data_res)
 
-fp = open('yjzj.json', 'w', encoding='utf-8')
+fp = open('spider/requests/yjzj.json', 'w', encoding='utf-8')
 json.dump(data_list, fp, ensure_ascii=False)
 print('over')
